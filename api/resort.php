@@ -20,6 +20,7 @@ if (isset($_POST['resortName'])) {
     while ($row = mysqli_fetch_array($run_select)) {
 
         array_push($someArray, [
+            'id' =>$row['id'],
             'name' => $row['name'],
             'serviceType' => $row['serviceType'],
             'longitude' =>$row['longitude'],
@@ -27,7 +28,7 @@ if (isset($_POST['resortName'])) {
             'city' =>$row['city'],
             'contact' =>$row['contact'],
             'amount' =>$row['amount'],
-            'image' =>$row['image'],
+            'imageString' =>$row['image'],
         ]);
     }
 

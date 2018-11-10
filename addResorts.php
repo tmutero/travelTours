@@ -122,7 +122,6 @@ if (!isLoggedIn()) {
 </script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-
 <script>
     var map;
     var marker;
@@ -182,13 +181,13 @@ if (!isLoggedIn()) {
         var lat = marker.getPosition().lat();
         var lng = marker.getPosition().lng();
 
-        var url = "save_resort.php";
+        var url = "resort_action.php";
 
       //  var url = 'save_resort.php?name=' + name + '&service_type=' + service_type +
         //    '&city_id=' + city_id + '&lat=' + lat + '&lng=' + lng + '&amount=' + amount + '&contact=' + contact;
 
 //alert(url);
-        $.post("save_resort.php", {
+        $.post("resort_action.php", {
                 name: name,
                 service_type: service_type,
                 city_id: city_id,

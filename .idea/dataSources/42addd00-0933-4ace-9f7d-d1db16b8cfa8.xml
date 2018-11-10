@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="budget@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="budget">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="ahpcz"/>
+    <schema id="4" parent="1" name="council"/>
+    <schema id="5" parent="1" name="demo"/>
+    <schema id="6" parent="1" name="ehealth"/>
+    <schema id="7" parent="1" name="ehpcz"/>
+    <schema id="8" parent="1" name="food"/>
+    <schema id="9" parent="1" name="fuelsys"/>
+    <schema id="10" parent="1" name="hpa"/>
+    <schema id="11" parent="1" name="hwo"/>
+    <schema id="12" parent="1" name="hwo2"/>
+    <schema id="13" parent="1" name="image_upload"/>
+    <schema id="14" parent="1" name="information_schema"/>
+    <schema id="15" parent="1" name="inventory"/>
+    <schema id="16" parent="1" name="mdpcz2"/>
+    <schema id="17" parent="1" name="mdpczonline"/>
+    <schema id="18" parent="1" name="medlabs"/>
+    <schema id="19" parent="1" name="mohhris"/>
+    <schema id="20" parent="1" name="mysql"/>
+    <schema id="21" parent="1" name="ncz"/>
+    <schema id="22" parent="1" name="oneall"/>
+    <schema id="23" parent="1" name="oneall2"/>
+    <schema id="24" parent="1" name="oneall3"/>
+    <schema id="25" parent="1" name="order"/>
+    <schema id="26" parent="1" name="pascalnyasha"/>
+    <schema id="27" parent="1" name="pcz"/>
+    <schema id="28" parent="1" name="performance_schema"/>
+    <schema id="29" parent="1" name="photoupload"/>
+    <schema id="30" parent="1" name="phpmyadmin"/>
+    <schema id="31" parent="1" name="pos"/>
+    <schema id="32" parent="1" name="rehab"/>
+    <schema id="33" parent="1" name="sales"/>
+    <schema id="34" parent="1" name="school"/>
+    <schema id="35" parent="1" name="sms"/>
+    <schema id="36" parent="1" name="sys"/>
+    <schema id="37" parent="1" name="tansoft"/>
+    <schema id="38" parent="1" name="websync"/>
+    <schema id="39" parent="1" name="youthvibes"/>
+    <schema id="40" parent="1" name="pharmacy"/>
+    <schema id="41" parent="1" name="hwo3"/>
+    <table id="42" parent="2" name="booking"/>
+    <table id="43" parent="2" name="city"/>
+    <table id="44" parent="2" name="clients"/>
+    <table id="45" parent="2" name="resorts"/>
+    <table id="46" parent="2" name="users"/>
+    <column id="47" parent="42" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="42" name="client_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="49" parent="42" name="resort_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="50" parent="42" name="date_created">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="51" parent="42" name="days_required">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="52" parent="42" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="43" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="43" name="province">
+      <Position>3</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="43" name="city">
+      <Position>2</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="44" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="57" parent="44" name="unique_id">
+      <Position>2</Position>
+      <DataType>varchar(23)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="44" name="name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="44" name="email">
+      <Position>9</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="44" name="encrypted_password">
+      <Position>5</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="44" name="salt">
+      <Position>6</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="44" name="created_at">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="63" parent="44" name="updated_at">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="64" parent="44" name="contact">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <index id="65" parent="44" name="email">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="66" parent="44" name="unique_id">
+      <ColNames>unique_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="67" parent="44" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="68" parent="44" name="unique_id">
+      <ColNames>unique_id</ColNames>
+      <UnderlyingIndexName>unique_id</UnderlyingIndexName>
+    </key>
+    <key id="69" parent="44" name="email">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>email</UnderlyingIndexName>
+    </key>
+    <column id="70" parent="45" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="71" parent="45" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="45" name="serviceType">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="73" parent="45" name="longitude">
+      <Position>5</Position>
+      <DataType>double(11,9)|0</DataType>
+    </column>
+    <column id="74" parent="45" name="latitude">
+      <Position>6</Position>
+      <DataType>double(11,9)|0</DataType>
+    </column>
+    <column id="75" parent="45" name="contact">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="76" parent="45" name="amount">
+      <Position>8</Position>
+      <DataType>double(11,2)|0</DataType>
+    </column>
+    <column id="77" parent="45" name="image">
+      <Position>9</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="78" parent="45" name="city_id">
+      <Position>3</Position>
+      <DataType>int(20)|0</DataType>
+    </column>
+    <key id="79" parent="45" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="80" parent="46" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="46" name="username">
+      <Position>2</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="46" name="email">
+      <Position>3</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="46" name="user_type">
+      <Position>4</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="46" name="password">
+      <Position>5</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="46" name="datecreated">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+  </database-model>
+</dataSource>

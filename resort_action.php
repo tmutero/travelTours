@@ -34,5 +34,10 @@ if($_POST["name"]) {
         die('Invalid query: ' . mysqli_error());
     }
 }
+if($_POST['btn_action'] == 'fetch_single')
+{
+
+
+}
 
 ?>
