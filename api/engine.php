@@ -47,8 +47,8 @@ if (isset($_POST['resortName'])) {
     }
 
 
-        $someJSON = json_encode($someArray);
-        echo $someJSON;
+    $someJSON = json_encode($someArray);
+    echo $someJSON;
 
 }
 
