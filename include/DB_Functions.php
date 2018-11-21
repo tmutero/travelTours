@@ -48,6 +48,25 @@ class DB_Functions {
         }
     }
 
+    /*
+     * Store Booking
+     */
+
+    public function storeBooking($client_id,$resort_id) {
+
+        $stmt = $this->conn->prepare("INSERT INTO booking(client_id, resort_id) VALUES(?, ?)");
+        $stmt->bind_param($client_id,$resort_id);
+        $result = $stmt->execute();
+        $stmt->close();
+
+        // check for successful store
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Get user by email and password
      */

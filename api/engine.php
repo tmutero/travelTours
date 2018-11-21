@@ -12,11 +12,15 @@ if (isset($_POST['resortName'])) {
 
     // receiving the post params
     $resortName = $_POST['resortName'];
+    $preferedService=$_POST['preferedService'];
+    $preferedCity=$_POST['preferedCity'];
+
     $latitudeFrom=$_POST['latitude'];
     $longitudeFrom=$_POST['longitude'];
 
 
-    $select = "SELECT *, s.id as resortID  FROM `resorts` s join city c ON s.city_id = c.id";
+    $select = "SELECT *, s.id as resortID  FROM `resorts` s join city c ON s.city_id = c.id 
+and s.serviceType='$preferedService' and c.city='$preferedCity'";
     $run_select = mysqli_query($conn, $select);
     $someArray = [];
     while ($row = mysqli_fetch_array($run_select)) {
@@ -52,5 +56,15 @@ if (isset($_POST['resortName'])) {
 
 }
 
+/*
+ *
+ *
+ * SELECT *,s.id as resortID, (((acos(sin(($latitudeFrom*pi()/180))
+* sin((latitude*pi()/180))+
+                 cos(($latitudeFrom*pi()/180)) *
+                 cos((latitude*pi()/180)) * cos((($longitudeFrom - longitude)
+                 *pi()/180))))*180/pi())*60*1.1515*1.609344) as distance
+FROM resorts s WHERE s.serviceType='$preferedService' and c.city='$preferedCity' ORDER BY distance
+ */
 ?>
 

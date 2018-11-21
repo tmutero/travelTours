@@ -94,6 +94,7 @@ if (!isLoggedIn()) {
                             <option>Select Option</option>
                             <option value="Game Reserves"> Game Reserves</option>
                             <option value="Hotel and Conference">Hotel and Conference</option>
+                            <option value="Recreational Services">Recreational Services</option>
                         </select>
                     </div>
 

@@ -1,4 +1,4 @@
-<?php include ('auth.php');?>
+<?php include('auth.php'); ?>
     <!DOCTYPE html>
     <title>Travel Tours :Resorts</title>
 <?php include('header.php'); ?>
@@ -35,16 +35,38 @@
                         </div>
 
                         <div class="content table-responsive table-full-width">
-                                                        <table class="table table-hover">
+                            <table class="table table-hover">
                                 <thead>
                                 <th>Client Name</th>
                                 <th>Resort Name</th>
                                 <th>Date Booked</th>
-                                <th>Service Offered</th>
-                                <th>Action</th>
+
                                 </thead>
                                 <tbody>
+                                <?php
+                                include('include/conn.php');
+                                $select = "SELECT r.name as resortName,c.name as clientName,b.dateCreated as dateCreated FROM booking b JOIN resorts r JOIN clients c WHERE b.clientID=c.id AND b.resortID=r.id";
+                                $run_select = mysqli_query($conn, $select);
+                                while ($rows = mysqli_fetch_array($run_select)) {
 
+                                    $resortName = $rows['resortName'];
+                                    $clientName = $rows['clientName'];
+                                    $dateCreated = $rows['dateCreated'];
+
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $resortName; ?></td>
+                                        <td><?php echo $clientName; ?></td>
+                                        <td><?php echo $dateCreated; ?></td>
+
+
+
+
+                                    </tr>
+                                    <?php
+                                }
+
+                                ?>
                                 </tbody>
                             </table>
 
@@ -60,13 +82,9 @@
     </div>
 
 
-
-
-
-
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#bootstrap-data-table-export').DataTable();
-        } );
+        });
     </script>
-<?php include('footer.php')?>
+<?php include('footer.php') ?>
